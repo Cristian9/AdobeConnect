@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>API Adobe Connect</title>
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
         <style type="text/css">
             body{
                 background: #f4f4f4;
@@ -19,9 +20,11 @@
             }
         </style>
         <script type="text/javascript" src="statics/js/jquery-2.1.4.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
         <script type="text/javascript" src="statics/js/jquery.ctools.js"></script>
         <script type="text/javascript">
             $(document).ready(function () {
+				$('select').select2();
                 $('#btn_send').click(function () {
                     $('#select_salas').validate({
                         required: true,
@@ -50,7 +53,7 @@
                             <select id="select_salas" name="moderator">
                                 <option value="0">:::: seleccione ::::</option>
                                 <?php
-                                for ($i = 1; $i <= 14; $i++) {
+                                for ($i = 1; $i < 20; $i++) {
                                     echo "<option value='" . $i . "'>Moderador " . $i . "</option>";
                                 }
                                 ?>

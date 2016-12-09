@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+	$('select').select2();
     $('#fechainicio, #fechafin').datepicker();
     $('.table').css({display: 'none'});
     $('.attendance').css({cursor: 'pointer'});
@@ -72,7 +72,7 @@ $(document).ready(function () {
                 }},
                 {'data': function (row) {
                     return (typeof row['url-path'] === "undefined") ? ''
-                        : '<a href="https://utp.adobeconnect.com' + row['url-path'] + '" target="_blank">Ir a la sala...</a>'
+                        : '<a href="https://utp.adobeconnect.com' + row['url-path'] + '" target="_blank">https://utp.adobeconnect.com' + row['url-path'] + '</a>'
                 }}
             ]
         });

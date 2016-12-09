@@ -5,11 +5,13 @@
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
         <link href="statics/media/css/style.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="statics/css/jquery-ui.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
         <script type="text/javascript" src="//code.jquery.com/jquery-1.11.3.min.js"></script>
         <script type="text/javascript" src="statics/js/jquery-ui.js"></script>
         <script type="text/javascript" src="statics/js/jquery.ctools.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
         <script type="text/javascript" src="statics/media/js/utils.js"></script>
     </head>
     <body>

@@ -201,6 +201,15 @@ class AdobeConnectClient {
     }
 
     /**
+     * To obtain the sco-id of the user’s my-meetings folder
+     * @return array
+     */
+    public function getShortCut() {
+        $result = $this->makeRequest('sco-shortcuts');
+        return $result;
+    }
+
+    /**
      * create meeting
      *
      * @param int    $folder_id
@@ -222,6 +231,41 @@ class AdobeConnectClient {
             )
         );
         return $result['sco']['@attributes']['sco-id'];
+    }
+
+    /**
+     * Make the meeting public. Use the sco-id of the meeting as the acl-id
+     * @param int acl
+     * @return array
+     */
+    public function setPublicMeeting($acl) {
+        $result = $this->makeRequest('permissions-update', array(
+                'acl-id' => $acl,
+                'principal-id' => 'public-access',
+                'permission-id' => 'view-hidden'
+            )
+        );
+
+        return $result;
+    }
+
+
+    /**
+     * set Permissions to add a host, a presenter, and participants
+     * @param int $principal
+     * @param int $acl_id
+     *
+     * @return array
+     */
+    public function setPermissionsMetting($principal, $acl_id) {
+        $result = $this->makeRequest('permissions-update', array(
+                'principal-id' => $principal,
+                'acl-id' => $acl_id,
+                'permission-id' => 'host'
+            )
+        );
+
+        return $result;
     }
 
     /**

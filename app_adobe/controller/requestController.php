@@ -50,9 +50,8 @@ class requestController {
         preg_match($part_of_html, $template, $match);
 
         $tmp = array("{scoid}", "{date}", "{salas}");
-
         foreach ($meetings['my-meetings']['meeting'] as $v) {
-            $parse = array($v['@attributes']['sco-id'], strtotime($v['date-begin']), $v['name']);
+            $parse = array($v['@attributes']['sco-id'], strtotime($v['date-begin']), $v['name'] . ' (' . $v['domain-name'].$v['url-path'].')');
 
             $replaced .= str_replace($tmp, $parse, $match[0]);
         }
