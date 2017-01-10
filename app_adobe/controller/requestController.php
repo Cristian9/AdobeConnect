@@ -27,7 +27,7 @@ class requestController {
         $this->room = (isset($_POST['moderator'])) ? $_POST['moderator'] : $_SESSION['room'];
 
         $this->cliente->setUser("moderador" . $this->room);
-        $this->cliente->setPassword("utp.moderador" . $this->room);
+        $this->cliente->setPassword("2017.moderador" . $this->room);
 
         $this->cliente->makeAuth();
 

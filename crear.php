@@ -13,8 +13,8 @@ $principal_id = array(
 	'moderador3' => '1346970956',
 	'moderador4' => '1347009796',
 	'moderador5' => '1347009879',
-	'moderador6' => '1346962333',
-	'moderador7' => '1347000129',
+	'moderador6' => '1346962333'
+	/*'moderador7' => '1347000129',
 	'moderador8' => '1347010357',
 	'moderador9' => '1347038693',
 	'moderador10' => '1346972577',
@@ -27,10 +27,10 @@ $principal_id = array(
 	'moderador17' => '1531745831',
 	'moderador18' => '1531800835',
 	'moderador19' => '1531736176',
-	'moderador20' => '1531800725'
+	'moderador20' => '1531800725'*/
 );
 
-for($mod = 1; $mod <= 20; $mod++) {
+for($mod = 1; $mod <= count($principal_id); $mod++) {
 
 	$username = "moderador" . $mod;
 	$password = "utp.moderador" . $mod;
@@ -57,7 +57,7 @@ for($mod = 1; $mod <= 20; $mod++) {
 
 	for($j = ($numero_sala - 1); $j <= $numero_sala; $j++) {
 
-		$create = $adobeClient->createMeeting($folder_id, "Capacitacion Docentes " . $j, "2016-11-23T15:00", "2016-11-23T16:00", "capacitaciondocente" . $j);
+		$create = $adobeClient->createMeeting($folder_id, "Induccion CGT " . $j, "2016-11-23T15:00", "2016-11-23T16:00", "induccioncgt" . $j);
 
 		$public = $adobeClient->setPublicMeeting($create);
 
