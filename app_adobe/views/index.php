@@ -53,7 +53,7 @@
                             <select id="select_salas" name="moderator">
                                 <option value="0">:::: seleccione ::::</option>
                                 <?php
-                                for ($i = 1; $i < 20; $i++) {
+                                for ($i = 1; $i < 30; $i++) {
                                     echo "<option value='" . $i . "'>Moderador " . $i . "</option>";
                                 }
                                 ?>
