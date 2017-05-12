@@ -127,6 +127,11 @@ $(document).ready(function () {
         var select = document.getElementById('sessions');
         var index = select.selectedIndex;
 
+        if(index == '0') {
+            alert('Debes seleccionar una sala para ver las grabaciones');
+            return false;
+        }
+
         var tbegin = select.options[index].title;
         var sco_id = select.value;
         var inicio = document.getElementById('fechainicio').value;
