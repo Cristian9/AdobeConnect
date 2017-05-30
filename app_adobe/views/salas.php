@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>API Adobe Connect</title>
+        <link rel="icon" type="image/png" href="statics/images/favicon.jpg" />
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
         <link href="statics/media/css/style.css" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="statics/css/jquery-ui.css">

@@ -44,14 +44,22 @@ class requestController {
         $meetings = $this->cliente->getAllMeetings();
 
         $template = file_get_contents('app_adobe/views/salas.php');
-
+        
         $part_of_html = "|<!--salas-->(.*?)<!--finsalas-->|is";
 
         preg_match($part_of_html, $template, $match);
-
+        
         $tmp = array("{scoid}", "{date}", "{salas}");
-        foreach ($meetings['my-meetings']['meeting'] as $v) {
-            $parse = array($v['@attributes']['sco-id'], strtotime($v['date-begin']), $v['name'] . ' (' . $v['domain-name'].$v['url-path'].')');
+
+        if($meetings['my-meetings']['meeting'][0]) {
+            foreach ($meetings['my-meetings']['meeting'] as $val) {
+                $parse = array($val['@attributes']['sco-id'], strtotime($val['date-begin']), $val['name'] . ' (' . $val['domain-name'].$val['url-path'].')');
+
+                $replaced .= str_replace($tmp, $parse, $match[0]);
+            }
+        } else {
+            $val = $meetings['my-meetings']['meeting'];
+            $parse = array($val['@attributes']['sco-id'], strtotime($val['date-begin']), $val['name'] . ' (' . $val['domain-name'].$val['url-path'].')');
 
             $replaced .= str_replace($tmp, $parse, $match[0]);
         }
